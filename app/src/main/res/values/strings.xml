@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RoomDBExampleApp</string>
+    <string name="add_employee">Add employee</string>
+    <string name="view_all_employee">View all employee</string>
 </resources>
