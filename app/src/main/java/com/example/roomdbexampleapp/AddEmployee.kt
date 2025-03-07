@@ -44,7 +44,6 @@ class AddEmployee : AppCompatActivity() {
             val email = empEmail.text.toString()
             val address = addEmpBtn.text.toString()
 
-
         }
 
     }
