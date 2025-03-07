@@ -5,13 +5,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 
 class ViewAllEmployee : AppCompatActivity() {
 
     private lateinit var empRecyclerView: RecyclerView
-    private lateinit var employeeList : List<DCEmployee>
+    private lateinit var adapter : AdapterEmployee
+    private lateinit var db : DBEmployee
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,7 +28,20 @@ class ViewAllEmployee : AppCompatActivity() {
 
         empRecyclerView = findViewById(R.id.recyclerView)
         empRecyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = AdapterEmployee(employeeList)
+        adapter = AdapterEmployee(emptyList())
         empRecyclerView.adapter = adapter
+
+        db = Room.databaseBuilder(applicationContext,
+            DBEmployee::class.java,
+            "employee_db").build()
+
+        fetchEmployees()
+    }
+    private fun fetchEmployees(){
+        db.employeeDao().getAllEmployees().observe(this, Observer { employeeList->
+            employeeList?.let{
+                adapter.updateList(it)
+            }
+        })
     }
 }

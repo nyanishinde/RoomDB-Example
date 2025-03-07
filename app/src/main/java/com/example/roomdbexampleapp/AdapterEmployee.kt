@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterEmployee(private val employees : List<DCEmployee>):RecyclerView.Adapter<AdapterEmployee.EmployeeViewHolder>() {
+class AdapterEmployee(private var employees : List<DCEmployee>):RecyclerView.Adapter<AdapterEmployee.EmployeeViewHolder>() {
     inner class EmployeeViewHolder(itemView : View):RecyclerView.ViewHolder(itemView) {
         val employeeId : TextView = itemView.findViewById(R.id.empId)
         val employeeName : TextView = itemView.findViewById(R.id.empName)
@@ -31,6 +31,11 @@ class AdapterEmployee(private val employees : List<DCEmployee>):RecyclerView.Ada
         holder.employeeDeptId.text = emp.empDeptNo.toString()
         holder.employeeEmail.text = emp.empEmail
         holder.employeeAddress.text = emp.empAddress
+    }
+
+    fun updateList(newList : List<DCEmployee>){
+        employees = newList
+        notifyDataSetChanged()
     }
 
 }
