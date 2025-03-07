@@ -23,36 +23,58 @@ Follows MVVM architecture with coroutines for background tasks.
 🏗️ Tech Stack
 
 Language: Kotlin
+
 Database: Room Database
+
 UI Components: RecyclerView, Material Design
+
 Threading: Coroutines, lifecycleScope
+
 Architecture: MVVM (ViewModel, Repository, DAO)
+
 
 ⚙️ Steps to Create This Application
 
 1️⃣ Setup Your Android Project
+
 Open Android Studio and create a new Empty Activity project.
+
 Select Kotlin as the language.
+
 Add the required dependencies in build.gradle (Module: app):
+
 Enable Kotlin annotation processing (KAPT) in build.gradle:
 
+
 2️⃣ Define Room Database Components
+
 Create Employee Entity
+
 Create DAO Interface
+
 Setup Room Database
 
 3️⃣ Create FrontEnd
+
 Create main activity with two buttons to navigate futher
+
 Create Add employee activity with feilds of employee details
+
 Create show employee activity to view all employees in recycler view
+
 Create itemview to set in recycler view
 
 4️⃣ Implement RecyclerView for Employee List
+
 Create RecyclerView Adapter
+
 Display Data in RecyclerView
+
 
 🎯 How to Use the App
 
 1️⃣ Open the app and select "Add Employee" to enter employee details.
+
 2️⃣ Click "Save", and the employee will be stored in the Room Database.
+
 3️⃣ Go back and select "View All Employees" to see the list in a RecyclerView.
