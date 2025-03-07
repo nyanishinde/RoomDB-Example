@@ -72,7 +72,7 @@
                 android:id="@+id/empDeptIdTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Emp department Id"
+                android:text="Emp department Id:"
                 android:textSize="16sp"/>
 
             <TextView

@@ -2,6 +2,7 @@ package com.example.roomdbexampleapp
 
 import android.os.Bundle
 import android.provider.Settings.Global
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,7 +22,6 @@ class AddEmployee : AppCompatActivity() {
     private lateinit var empEmail: TextInputEditText
     private lateinit var empAddress: TextInputEditText
     private lateinit var addEmpBtn : MaterialButton
-    private lateinit var employeeList:List<DCEmployee>
     private lateinit var database: DBEmployee
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +41,7 @@ class AddEmployee : AppCompatActivity() {
         empAddress = findViewById(R.id.edtEmpAddress)
         addEmpBtn=findViewById(R.id.AddEmployee)
 
-        database = Room.databaseBuilder(applicationContext,DBEmployee::class.java,"EmployeeDB").build()
+        database = DBEmployee.getDatabase(this)
 
         addEmpBtn.setOnClickListener {
             val name = empName.text.toString()
@@ -49,11 +49,15 @@ class AddEmployee : AppCompatActivity() {
             val salary = empSalary.text.toString().toDouble()
             val email = empEmail.text.toString()
             val address = addEmpBtn.text.toString()
+            val employee = DCEmployee(0,name,deptId,salary,email,address)
 
             GlobalScope.launch {
-                database.employeeDao().upsertEmployee(DCEmployee(0,name,deptId,salary,email,address))
+                database.employeeDao().upsertEmployee(employee)
+                runOnUiThread{
+                    Toast.makeText(this@AddEmployee, "Employee added", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
             }
-
 
         }
 

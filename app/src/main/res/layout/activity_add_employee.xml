@@ -40,7 +40,8 @@
             android:id="@+id/edtEmpDeptNo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter employee Dept no"/>
+            android:hint="Enter employee Dept no"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,7 +59,8 @@
             android:id="@+id/edtEmpSalary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter employee salarye"/>
+            android:hint="Enter employee salary"
+            android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +78,8 @@
             android:id="@+id/edtEmpEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter employee name"/>
+            android:hint="Enter employee email"
+            android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -94,7 +97,8 @@
             android:id="@+id/edtEmpAddress"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter employee name"/>
+            android:hint="Enter employee address"
+            android:inputType="textPostalAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton

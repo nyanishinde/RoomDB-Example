@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DAOEmployee {
@@ -19,4 +18,9 @@ interface DAOEmployee {
     @Query("SELECT * FROM employee")
     fun getAllEmployees():LiveData<List<DCEmployee>>
 
+    @Query("SELECT * FROM employee ORDER BY empDeptNo")
+    fun getAllEmployeeByDeptNo():LiveData<List<DCEmployee>>
+
+    @Query("SELECT * FROM employee ORDER BY empName")
+    fun getAllEmployeeByName():LiveData<List<DCEmployee>>
 }

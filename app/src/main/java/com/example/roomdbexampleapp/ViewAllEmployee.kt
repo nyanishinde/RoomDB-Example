@@ -31,14 +31,12 @@ class ViewAllEmployee : AppCompatActivity() {
         adapter = AdapterEmployee(emptyList())
         empRecyclerView.adapter = adapter
 
-        db = Room.databaseBuilder(applicationContext,
-            DBEmployee::class.java,
-            "employee_db").build()
+        db = DBEmployee.getDatabase(this)
 
         fetchEmployees()
     }
     private fun fetchEmployees(){
-        db.employeeDao().getAllEmployees().observe(this, Observer { employeeList->
+        db.employeeDao().getAllEmployeeByName().observe(this, Observer { employeeList->
             employeeList?.let{
                 adapter.updateList(it)
             }
