@@ -21,6 +21,7 @@ class ViewAllEmployee : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         empRecyclerView = findViewById(R.id.recyclerView)
         empRecyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = AdapterEmployee(employeeList)

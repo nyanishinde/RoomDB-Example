@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "employee")
 data class DCEmployee(
     @PrimaryKey(autoGenerate = true)
-    val empId: Int,
+    val empId: Int =0,
     val empName: String,
     val empDeptNo: Int,
     val empSalary: Double,
