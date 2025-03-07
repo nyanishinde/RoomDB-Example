@@ -7,4 +7,124 @@
     android:layout_height="match_parent"
     tools:context=".AddEmployee">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmpId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee id"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpId">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmployeeName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpDeptNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmpDeptNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee Dept no"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpDeptNo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmpSalary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee salarye"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpSalary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmpEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmpAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmpAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter employee name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/AddEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add employee"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutEmpAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
